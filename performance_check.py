@@ -9,7 +9,7 @@ import pandas as pd
 import preprocessingfile as preprocess
 import models
 
-data = 'pc2.csv'
+data = 'Data\data\pc2.csv' # Change the dataset here
 original_data, original_X, original_Y,combined_training_data,x_train1,x_train2,x_train,x_test,x_val,y_train1,y_train2,y_train,y_test,y_val = preprocess.my_sdp_preprocessor(data)
 all_data = [original_data, original_X, original_Y,combined_training_data,x_train1,x_train2,x_train,x_test,x_val,y_train1,y_train2,y_train,y_test,y_val]
 
@@ -85,12 +85,4 @@ def send_results_to_logistic_regression():
     #yyy = clf.predict(new_test_set_x_matrix)
     #accuracy_score(y_test.values,yyy)
     return clf, new_test_set_x_matrix
-
-
-
-
-
-
-
-
 

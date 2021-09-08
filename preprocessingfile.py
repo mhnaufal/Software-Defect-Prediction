@@ -27,8 +27,8 @@ def my_sdp_preprocessor(datafilename_as_csv_inquotes):
     
     #now we resample, and from that we take training and validation sets
     
-    sm = SMOTE(random_state=12, ratio = 1.0)
-    x, y = sm.fit_sample(x_train1, y_train1)
+    sm = SMOTE(random_state=42)
+    x, y = sm.fit_resample(x_train1, y_train1)
     y_train2 = pd.DataFrame(y, columns=['defects'])
     x_train2 = pd.DataFrame(x, columns=original_X.columns)
     
@@ -38,7 +38,6 @@ def my_sdp_preprocessor(datafilename_as_csv_inquotes):
     
     combined_training_data = x_train.copy()
     combined_training_data['defects'] = y_train
-    
     
     
     import seaborn as sns

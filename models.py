@@ -6,8 +6,10 @@ Created on Fri Dec 14 01:13:37 2018
 """
 import pandas as pd
 import preprocessingfile as preprocess
+
 #original_data, original_X, original_Y,combined_training_data,x_train1,x_train2,x_train,x_test,x_val,y_train1,y_train2,y_train,y_test,y_val = preprocess.my_sdp_preprocessor('pc2.csv')
 #all_data = original_data, original_X, original_Y,combined_training_data,x_train1,x_train2,x_train,x_test,x_val,y_train1,y_train2,y_train,y_test,y_val 
+
 def NN(original_data, original_X, original_Y,combined_training_data,x_train1,x_train2,x_train,x_test,x_val,y_train1,y_train2,y_train,y_test,y_val):   
     # Importing the Keras libraries and packages
     import keras
@@ -18,17 +20,17 @@ def NN(original_data, original_X, original_Y,combined_training_data,x_train1,x_t
     classifier = Sequential()
     
     # Adding the input layer and the first hidden layer
-    classifier.add(Dense(output_dim = 15, init = 'uniform', activation = 'relu', input_dim = len(original_X.columns)))
+    classifier.add(Dense(units = 15, activation = 'relu', input_dim = len(original_X.columns)))
     # Adding the second hidden layer
-    classifier.add(Dense(output_dim = 8, init = 'uniform', activation = 'relu'))
-    classifier.add(Dense(output_dim = 5, init = 'uniform', activation = 'relu'))
+    classifier.add(Dense(units = 8, activation = 'relu'))
+    classifier.add(Dense(units = 5, activation = 'relu'))
     # Adding the output layer
-    classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid'))
+    classifier.add(Dense(units = 1, activation = 'sigmoid'))
     # Compiling the ANN
     
     classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
     # Fitting the ANN to the Training set
-    classifier.fit(x_train, y_train, batch_size = 10, nb_epoch = 100)
+    classifier.fit(x_train, y_train, batch_size = 10, epochs = 100)
     
     #Making the predictions and evaluating the model
     # Predicting the Test set results
@@ -56,10 +58,6 @@ def svm(original_data, original_X, original_Y,combined_training_data,x_train1,x_
     clf.fit(x_train, y_train)
     return clf
     
-
-        
-
-
 def cnn(original_data, original_X, original_Y,combined_training_data,x_train1,x_train2,x_train,x_test,x_val,y_train1,y_train2,y_train,y_test,y_val):
     from keras.models import Sequential
     from keras.layers import Dense,Dropout,Conv2D,Conv1D,Flatten,MaxPool2D
@@ -102,12 +100,8 @@ def cnn(original_data, original_X, original_Y,combined_training_data,x_train1,x_
     
     return model         
 
-
     
 #NN_clf = NN()
 #rf_clf = random_forest()
 #svm_clf = svm()
 #cnn_clf = cnn()
-
-
-

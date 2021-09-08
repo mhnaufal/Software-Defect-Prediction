@@ -1,3 +1,23 @@
+# FORKED !
+
+### How to run!
+_Windows 10 steps_
+
+Create Python virtual environment
+> python -m venv sd-venv
+
+Run virtual environment
+> sd-venv/Scripts/activate.bat
+
+Install the library
+> pip install -r requirements.txt
+
+Run the models
+> python performance_check.py
+
+[Activate venv Windows](https://stackoverflow.com/questions/65552171/how-to-activate-virtualenv-on-windows)
+[Create venv Windows](https://docs.python.org/3/library/venv.html)
+
 # Software-Defect-Prediction
 Software Defect Prediction is an
 important aspect in order to ensure software
