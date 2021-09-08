@@ -3,7 +3,7 @@
 ### How to run!
 _Windows 10 steps_
 
-Open up cmd as Administrator and move to this repo directory
+Open up cmd or Powershell (Powershell prefered) as Administrator and move to this repo directory
 
 Create Python virtual environment
 > python -m venv sd-venv
@@ -13,7 +13,7 @@ Run virtual environment
 
 Install the library
 > pip install -r requirements.txt
-_If above command result an error, run the cmd as Administrator and then re run the above command_
+_If above command result an error, run the cmd or Powershell as Administrator and then re run the above command_
 
 Run the models
 > python src\performance_check.py
