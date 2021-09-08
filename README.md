@@ -3,20 +3,23 @@
 ### How to run!
 _Windows 10 steps_
 
+Open up cmd as Administrator and move to this repo directory
+
 Create Python virtual environment
 > python -m venv sd-venv
 
 Run virtual environment
-> sd-venv/Scripts/activate.bat
+> sd-venv/Scripts/activate
 
 Install the library
 > pip install -r requirements.txt
+_If above command result an error, run the cmd as Administrator and then re run the above command_
 
 Run the models
-> python performance_check.py
+> python src\performance_check.py
 
-[Activate venv Windows](https://stackoverflow.com/questions/65552171/how-to-activate-virtualenv-on-windows)
-[Create venv Windows](https://docs.python.org/3/library/venv.html)
+- [Create venv Windows](https://docs.python.org/3/library/venv.html)
+- [Activate venv Windows](https://stackoverflow.com/questions/65552171/how-to-activate-virtualenv-on-windows)
 
 # Software-Defect-Prediction
 Software Defect Prediction is an
